@@ -96,7 +96,7 @@ pipeline {
 				script {
                     echo "****** Docker Build and Tag Image running....******"
 					withDockerRegistry(credentialsId: 'docer-cred') {
-						sh "docker build -t mskr7/mkadir-blogapp:latest ."
+						sh "docker build -t mskr7/mkadir-blogapp:war ."
 					}
 				}
 			}
@@ -132,7 +132,7 @@ pipeline {
 				script {
                     echo "****** Docker Push Image running....******"
 					withDockerRegistry(credentialsId: 'docer-cred') {
-						sh "docker push mskr7/mkadir-blogapp:latest"
+						sh "docker push mskr7/mkadir-blogapp:war"
 					}
 				}
 			}
@@ -141,7 +141,7 @@ pipeline {
  		stage('Smoke Test') {
 			steps { 
 				echo "****** Smoke Test Image running....******"
-				sh "docker run -d --name smokerun -p 8080:8080 mskr7/mkadir-blogapp:latest"
+				sh "docker run -d --name smokerun -p 8080:8080 mskr7/mkadir-blogapp:war"
 				sh "sleep 90"
 				sh "docker rm --force smokerun"
 			}
