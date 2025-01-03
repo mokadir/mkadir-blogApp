@@ -22,12 +22,12 @@ pipeline {
 			}
 		}
 		
-		stage ('Compile'){
+/* 		stage ('Compile'){
 			steps {
                 echo "****** Compile running....******"
 				sh "mvn compile"
 			}
-		}
+		} */
 		
 		stage ('Build Application'){
 			steps {
@@ -36,7 +36,7 @@ pipeline {
 			}
 		}
 		
- 		stage('Code Coverage ') {
+ 		/* stage('Code Coverage ') {
 			steps {
 				echo "****** Code Coverage running....******"
 				echo "Running Code Coverage ..."
@@ -57,7 +57,7 @@ pipeline {
 				echo "****** File System scan running....******"
 				sh "trivy fs --format table -o trivyscanfs.html ."
 			}
-		} 
+		}  */
 /*		
  		stage('SAST') {
 			steps { 
@@ -91,7 +91,7 @@ pipeline {
 		} 
  */
 		
-		stage ('Docker Build & Tag'){
+	/* 	stage ('Docker Build & Tag'){
 			steps {
 				script {
                     echo "****** Docker Build and Tag Image running....******"
@@ -101,7 +101,7 @@ pipeline {
 				}
 			}
 		}
-
+ */
 /* 		stage('Build Docker Image') { 			# alternate. better using functions insted of commands
 			steps { 
 				echo "Build Docker Image"
@@ -127,7 +127,7 @@ pipeline {
 			}
 		}  need lot of ram
 */		
-		stage ('Docker Push'){
+	/* 	stage ('Docker Push'){
 			steps {
 				script {
                     echo "****** Docker Push Image running....******"
@@ -145,7 +145,7 @@ pipeline {
 				sh "sleep 90"
 				sh "docker rm --force smokerun"
 			}
-		} 
+		}  */
 		
 		stage('Trigger Deployment'){
 			steps { 
