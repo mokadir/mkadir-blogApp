@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>blogapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	
 	<name>blogapp</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -71,14 +71,7 @@
 
 	<build>
 		<plugins>
-			<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-war-plugin</artifactId>
-			<version>3.3.2</version>
-			<configuration>
-				<failOnMissingWebXml>false</failOnMissingWebXml>
-			</configuration>
-		</plugin>
+			
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
